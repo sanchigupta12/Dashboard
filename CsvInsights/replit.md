@@ -74,12 +74,24 @@ The application follows a multi-agent architecture pattern with clear separation
 - **CSV Support**: Multiple encodings (UTF-8, Latin1, CP1252, ISO-8859-1)
 - **JSON**: Internal data exchange format
 
+## Recent Changes (October 22, 2025)
+
+### Replit Environment Setup
+- **Python Version**: Python 3.11 installed with pip package manager
+- **Dependencies**: Installed via pip from pyproject.toml (Flask, Streamlit, Pandas, Plotly, Google GenAI)
+- **Streamlit Configuration**: Configured to bind to 0.0.0.0:5000 with CORS disabled for Replit proxy
+- **Workflow**: Streamlit app configured to run on port 5000
+- **Secrets**: GEMINI_API_KEY configured via Replit Secrets
+- **Deployment**: Configured for autoscale deployment with Streamlit
+
 ## Deployment Strategy
 
 ### Current Setup
-- **Platform**: Streamlit-based web application
-- **Configuration**: Page config with dashboard branding
-- **API Integration**: Direct Google Gemini API calls
+- **Platform**: Streamlit-based web application on Replit
+- **Configuration**: Page config with dashboard branding, Streamlit config for proxy compatibility
+- **API Integration**: Direct Google Gemini API calls via environment variable
+- **Port**: 5000 (frontend webview)
+- **Host**: 0.0.0.0 to support Replit's proxy system
 
 ### Architecture Decisions
 
